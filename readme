@@ -40,7 +40,7 @@ NOTA: El archivo make es sensible a los tabuladores (no considera la tabulacion
 como una secuencia de espacios) de manera que si edita el archivo tenga cuidado
 de usar el tabulador para identar, tal como se ilustra a continuacion:
 
-'''
+```
 CC=gcc
 CFLAGS=-Wall -ansi -pedantic
 programa: main.o conversion.o impresion.o
@@ -50,7 +50,7 @@ programa: main.o conversion.o impresion.o
 clean:
     rm -f *.o programa                                  <---- tabulación
     ls -la                                              <---- tabulación
-'''
+```
 
 
 
