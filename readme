@@ -1,0 +1,55 @@
+Tomado del libro:
+
+    Análisis y diseño de algoritmos
+    Gustavo López-Ismael Jeder- Augusto Vega
+    Ed. Alfaomega
+    Capítulo 11 seccion 11.6 página 300 en adelante
+
+Este es un ejemplo completo de compilación un proyecto en C.
+
+El proyecto está constituido por los siguientes archivos
+
+.
+├── conversion.c
+├── conversion.h
+├── impresion.c
+├── impresion.h
+├── main.c
+└── makefile
+
+makefile permite compilar (mediante make) el proyecto y genera los archivos
+objeto (*.o) y el archivo ejecutable, que se llama programa
+
+a) para compilar el proyecto:
+
+make
+
+b) para ejecutar el proyecto:
+
+./programa
+
+c) para limpiar el proyecto y solo quedarse con los archivos fuente:
+
+make clean
+
+d) para reconstruir el proyecto completamente (incluidos TODOS los .o):
+
+make all
+
+NOTA: El archivo make es sensible a los tabuladores (no considera la tabulacion
+como una secuencia de espacios) de manera que si edita el archivo tenga cuidado
+de usar el tabulador para identar, tal como se ilustra a continuacion:
+
+CC=gcc
+CFLAGS=-Wall -ansi -pedantic
+programa: main.o conversion.o impresion.o
+    $(CC) -o programa main.o conversion.o impresion.o   <---- tabulación
+.c.o:
+    $(CC) $(CFLAGS) -c $<                               <---- tabulación
+clean:
+    rm -f *.o programa                                  <---- tabulación
+    ls -la                                              <---- tabulación
+
+
+
+
